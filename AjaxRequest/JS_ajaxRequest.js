@@ -7,6 +7,9 @@ var data = [];
           data = JSON.parse(http.responseText);
           loadData(data);
         }
+        else {
+          console.log(http.readyState);
+        }
       };
       http.open("GET", "https://restcountries.eu/rest/v2/all", true);
       http.send();
@@ -43,17 +46,24 @@ var data = [];
 
     function loadData(data) {
       const rootDiv = document.getElementById("mytbl");
+      const thead = document.createElement("thead");
+      thead.classList.add("thead-dark");
+      rootDiv.appendChild(thead);
+      const trhead = document.createElement("tr");
+      trhead.innerHTML = "<th scope='col'>Country Name</th><th scope='col'>Flag</th><th scope='col'>population</th>"
+      thead.appendChild(trhead);
+
       data.forEach(function(element) {
         const tr = document.createElement("tr");
         const tdname = document.createElement("td");
         const tdflag = document.createElement("td");
-        const tdpopulation = document.createElement("td");
+        const tdcurrency = document.createElement("td");
         tdname.innerHTML ="<div>" + element.name +"</div>"
         tdflag.innerHTML ="<div> <img src="+ element.flag +" height='40' width='40'></div>"
-        tdpopulation.innerHTML ="<div>" + element.population +"</div>"
+        tdcurrency.innerHTML ="<div>" + element.callingCodes +"</div>"
         tr.appendChild(tdname);
         tr.appendChild(tdflag);
-        tr.appendChild(tdpopulation);
+        tr.appendChild(tdcurrency);
         rootDiv.appendChild(tr);
       });
     }
