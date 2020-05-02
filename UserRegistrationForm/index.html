@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <meta charset="utf-8">
+  <title>User Registration Form</title>
+  <link rel="shortcut icon" type="image/png" href="/favicon.ico">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Montserrat:ital'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+  h1{
+    font-family: "Montserrat", sans-serif
+  }
+      html,body,h2,h3,h4,h5,h6,p {font-family: "Roboto", sans-serif}
+  </style>
+  <body class="w3-light-grey">
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+      <div class="w3-row-padding">
+        <div class="w3-third">
+          <form class="" action="index.html" method="post">
+          <div class="w3-white w3-text-grey w3-card-4">
+            <div class="w3-container">
+              <div class="w3-panel w3-leftbar w3-pale-red w3-xxlarge w3-serif">
+                <h1 style='text-align:center'>Registration Form</h1>
+              </div>
+              <p><input class="w3-input w3-border" id="tname" name="first" type="text" placeholder="Name" required></p>
+              <p><input class="w3-input w3-border" id="temail"  name="first" type="email" placeholder="Email - some@domain.com" required></p>
+              <p><input class="w3-input w3-border" id="tage" name="first" type="number" placeholder="Age" min="10" max="100" required></p>
+              <form class="w3-container w3-card-4">
+                <h4>Gender</h4>
+                <p>
+                  <input class="w3-radio" type="radio" name="gender" value="male" checked>
+                  <label>Male</label>
+                  <input class="w3-radio" type="radio" name="gender" value="female">
+                  <label>Female</label>
+                </p>
+              </form>
+              <br>
+              <form class="w3-container w3-card-4">
+                <h4>select State and City</h4>
+              <select class="w3-select" name="option" id='stateid' onchange="selectcities()">
+                <option value="" disabled selected>Select State</option>
+                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Kerala">Kerala</option>
+                <option value="TamilNadu">TamilNadu</option>
+                <option value="Karanataka">Karanataka</option>
+              </select>
+              <select class="w3-select" name="option" id='cityid'>
+                <option value="" disabled selected>Select City</option>
+              </select>
+            </form>
+              <br>
+              <form class="w3-container w3-card-4">
+                <h4>Fav - Color</h4>
+                <p>
+                  <input class="w3-check" type="checkbox" name ='checkbox' value="Red">
+                  <label>Red</label>
+                  <input class="w3-check" type="checkbox" name ='checkbox' value="Blue">
+                  <label> Blue</label>
+                  <input class="w3-check" type="checkbox" name ='checkbox' value="Green">
+                  <label>Green</label>
+                </p>
+              </form>
+              <hr>
+              <p><input class="w3-input w3-border" id="tmsg" name="msgbox" type="textarea" placeholder="Leave a message" required></p>
+              <div class="w3-bar">
+                <button class="w3-button w3-black w3-round-xxlarge" onclick='myFun()'>Submit</button>
+                <button class="w3-button w3-right w3-round-xxlarge  w3-light-grey" onclick='resetform()'>Reset</button>
+              </div>
+              </div>
+              <br>
+            </div>
+          </form>
+          </div>
+        <div class="w3-twothird">
+          <div class="w3-container w3-card w3-white w3-margin-bottom">
+            <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Details of Registered Candidates</h2>
+            <div class="w3-container">
+              <table class='w3-table w3-striped w3-border' id='mytbl'>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Age</th>
+                  <th>Gender</th>
+                  <th>Address</th>
+                  <th>Fav-Color</th>
+                  <th>Sample Msg</th>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script type="text/javascript" src="dataentry.js">
+
+      </script>
+  </body>
+</html>
